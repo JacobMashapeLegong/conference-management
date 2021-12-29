@@ -17,9 +17,8 @@ public class Session {
     public String toString() {
         DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("hh:mma");
         var space = " ";
-        var checkForMinAppension = "Networking Event".equalsIgnoreCase(title) | "Lunch".equalsIgnoreCase(title) ? "" : "min";
-        var duration = this.duration + checkForMinAppension;
-        return startTime.format(timeFormatter) + space + title + space + duration;
+        var checkForMinAppension = "Networking Event".equalsIgnoreCase(title) | "Lunch".equalsIgnoreCase(title) ? "" : duration + "min";
+        return startTime.format(timeFormatter) + space + title + space + checkForMinAppension;
     }
 
     public void setStartTime(LocalTime startTime) {
